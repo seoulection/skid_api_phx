@@ -1,19 +1,25 @@
-# Skid
+# Skid API
 
-To start your Phoenix server:
+The backend for the Skid app
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Pre-requisites
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+- Elixir 1.12.3
+- Erlang/OTP 24
+- Phoenix 1.6.0
+- The [frontend app](https://github.com/seoulection/skid-app) running
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Running
 
-## Learn more
+1. Clone the repo
+2. `cd` into the repo and run `mix deps.get`
+3. Run `mix phx.server` to start the server
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+### Additional Features
+
+The server is equipped with GraphiQL. To view the interface, start the server and navigate to `localhost:4000/api/graphiql`
+
+
+## Tests
+
+- Run `mix test` to execute the tests

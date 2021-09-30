@@ -5,8 +5,16 @@ defmodule SkidWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", SkidWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/graphql", Absinthe.Plug,
+      schema: SkidWeb.Schema
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: SkidWeb.Schema,
+      interface: :simple,
+      context: %{pubsub: SkidWeb.Endpoint}
   end
 
   # Enables LiveDashboard only for development
